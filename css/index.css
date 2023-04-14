@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --corDiv: #F2A516;
+  --corHeader: #F26E22;
+  --corFundo: #fff;
+  --corTexto: #fff;
+}
+
+body{
+  background: #fff;
+  color: #000;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  background: var(--corHeader);
+  align-items: center;
+  color: #fff;
+}
+
+header nav{
+  display: flex;
+  gap: 1em;
+}
+
+.container{
+  background: var(--corDiv);
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 1em;
+  padding: 5px;
+  border-radius: 6px;
+  color: var(--corTexto);
+}
+
+.container h3{
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+/* Estilo para desktop */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+td:nth-child(1) {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+td:nth-child(2n+3) {
+  background-color: #e6f7ff;
+}
+
+@media only screen and (max-width: 600px) {
+  table {
+    font-size: 12px;
+  }
+  
+  th, td {
+    padding: 5px;
+  }
+}
