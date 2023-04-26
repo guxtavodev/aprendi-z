@@ -78,3 +78,9 @@ header nav{
   width: 100%;
   margin-top: 0.5em;
 }
+
+nav a{
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}

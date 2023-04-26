@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AprendiZ | Quiz Diário</title>
+  <link rel="stylesheet" href="./css/quiz.css">
+</head>
+<body>
+  <header>
+    <h1>AprendiZ</h1>
+    <nav>
+      <a href="/quiz">Quiz</a>
+      <a href="/zen">Zen</a>
+      <a href="/home">Ínicio</a>
+    </nav>
+  </header>
+	<h2 class="sub">Questionário</h2>
+
+	<form class="container">
+	  
+		<h2>Pergunta 1:</h2>
+		<p>Qual é o maior animal terrestre?</p>
+		<select name="resposta1" onchange="verificarResposta(this)">
+			<option value="" disabled selected>Escolha uma opção</option>
+			<option value="errada">Elefante</option>
+			<option value="certa">Girafa</option>
+			<option value="errada">Rinoceronte</option>
+		</select>
+
+		<h2>Pergunta 2:</h2>
+		<p>Qual é a capital da Austrália?</p>
+		<select name="resposta2" onchange="verificarResposta(this)">
+			<option value="" disabled selected>Escolha uma opção</option>
+			<option value="errada">Melbourne</option>
+			<option value="certa">Camberra</option>
+			<option value="errada">Sydney</option>
+		</select>
+
+		<h2>Pergunta 3:</h2>
+		<p>Qual é o maior planeta do Sistema Solar?</p>
+		<select name="resposta3" onchange="verificarResposta(this)">
+			<option value="" disabled selected>Escolha uma opção</option>
+			<option value="errada">Vênus</option>
+			<option value="errada">Marte</option>
+			<option value="certa">Júpiter</option>
+		</select>
+		<div id="resultado"></div>
+	</form>
+
+	<script>
+		function verificarResposta(elemento) {
+			var resposta = elemento.value;
+
+			if (resposta === "certa") {
+				elemento.style.border = "2px solid green";
+				elemento.style.color = "green";
+				elemento.disabled = true;
+
+				var resultado = document.getElementById("resultado");
+				resultado.innerHTML = "Resposta correta!";
+			} else {
+				elemento.style.border = "2px solid red";
+				elemento.style.color = "red";
+
+				var resultado = document.getElementById("resultado");
+				resultado.innerHTML = "Resposta incorreta!";
+			}
+		}
+	</script>
+</body>
+</html>
