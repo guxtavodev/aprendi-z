@@ -1,72 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AprendiZ | Quiz Diário</title>
-  <link rel="stylesheet" href="./css/quiz.css">
+	<meta charset="UTF-8">
+	<title>Ícone de Barra Lateral</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.sidebar-icon {
+			font-size: 30px;
+			cursor: pointer;
+		}
+		
+		.sidebar {
+			position: fixed;
+			top: 0;
+			left: -250px;
+			width: 250px;
+			height: 100%;
+			background-color: #ccc;
+			transition: all 0.3s ease-in-out;
+		}
+		
+		.sidebar.show {
+			left: 0;
+		}
+		
+		.close-btn {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 20px;
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
-  <header>
-    <h1>AprendiZ</h1>
-    <nav>
-      <a>Quiz</a>
-      <a>Zen</a>
-      <a>Sair</a>
-    </nav>
-  </header>
-	<h2 class="sub">Questionário</h2>
-
-	<form class="container">
-	  
-		<h2>Pergunta 1:</h2>
-		<p>Qual é o maior animal terrestre?</p>
-		<select name="resposta1" onchange="verificarResposta(this)">
-			<option value="" disabled selected>Escolha uma opção</option>
-			<option value="errada">Elefante</option>
-			<option value="certa">Girafa</option>
-			<option value="errada">Rinoceronte</option>
-		</select>
-
-		<h2>Pergunta 2:</h2>
-		<p>Qual é a capital da Austrália?</p>
-		<select name="resposta2" onchange="verificarResposta(this)">
-			<option value="" disabled selected>Escolha uma opção</option>
-			<option value="errada">Melbourne</option>
-			<option value="certa">Camberra</option>
-			<option value="errada">Sydney</option>
-		</select>
-
-		<h2>Pergunta 3:</h2>
-		<p>Qual é o maior planeta do Sistema Solar?</p>
-		<select name="resposta3" onchange="verificarResposta(this)">
-			<option value="" disabled selected>Escolha uma opção</option>
-			<option value="errada">Vênus</option>
-			<option value="errada">Marte</option>
-			<option value="certa">Júpiter</option>
-		</select>
-		<div id="resultado"></div>
-	</form>
-
+	<i class="fa fa-bars sidebar-icon"></i>
+	<div class="sidebar">
+		<i class="fa fa-times close-btn"></i>
+		<h2>Minha Sidebar</h2>
+		<p>Conteúdo da Sidebar</p>
+	</div>
+	
 	<script>
-		function verificarResposta(elemento) {
-			var resposta = elemento.value;
+	  const sidebar = document.querySelector('.sidebar');
+const sidebarIcon = document.querySelector('.sidebar-icon');
+const closeBtn = document.querySelector('.close-btn');
 
-			if (resposta === "certa") {
-				elemento.style.border = "2px solid green";
-				elemento.style.color = "green";
-				elemento.disabled = true;
+sidebarIcon.addEventListener('click', () => {
+    sidebar.classList.toggle('show');
+});
 
-				var resultado = document.getElementById("resultado");
-				resultado.innerHTML = "Resposta correta!";
-			} else {
-				elemento.style.border = "2px solid red";
-				elemento.style.color = "red";
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('show');
+});
 
-				var resultado = document.getElementById("resultado");
-				resultado.innerHTML = "Resposta incorreta!";
-			}
-		}
 	</script>
 </body>
 </html>
